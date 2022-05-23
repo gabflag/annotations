@@ -71,6 +71,11 @@ Definições que auxiliaram a leitura do documento:
       </p>  '-' significa 'não', não é possível iniciar conexões na direção indicada no título da coluna;
       </p>  'Port Foward' significa 'encaminhamento de portas', isso significa que o VM VirtualBox ouve certas portas no host e reencaminha todos os pacotes que chegam lá ao Guest interessado, na mesma ou em uma porta diferente. Essa é uma configuração manual.
       
+<p><h3>Para consultar a respeito de melhoria de desempenho da rede</h3></p>
+<p>Os modos Internal Network, Bridged Adapter e Host-Only possuem praticamente a mesma performance. Sendo que o modo Internal Network é um pouco mais rápido e usa menos ciclos do CPU, já que os pacotes nunca chegam na pilha da rede do host. O modo Nat é o mais lento deles, mas também é o mais seguro. Entretanto a recomendação dada pelo site oficial da VMBob é usar o modo Bridged ao invés do NAT.</p>
+<p/>Link para a consulta:https://www.virtualbox.org/manual/ch06.html#network_performance</p>
+
+      
 <p>.</p>.</p>.</p><h4>Site para aprofundamento do conteúdo acima disposto:</h4>
 </p>https://wltech.com.br/tipos-de-conexao-de-rede-no-virtualbox/#page-content
 </p>https://www.virtualbox.org/manual/ch06.html
