@@ -32,9 +32,9 @@ Tendo fixado preliminarmente essas definições paratiremos agora para os tipos 
 -------------------------------------------------------------------
 4° Bridged Adapter
 
-   Bridged Adapter: Na tradução literal Adaptador em Ponte, é a opção mais abrangente no que se refere a configuração de adaptadores nas VMs. Quando selecionada, o VirtualBox utiliza os drivers de rede do Host e fazem um ‘net filter (filtro de rede)’, interceptando e injetando dados na rede locaL, ou seja, ele usa a interface física do Host (placa de rede) como passagem de dados. O Guest que possui este modo selecionado, aparece para o Host como se fosse uma maquina física conectada na rede.
+   <p>Bridged Adapter: Na tradução literal Adaptador em Ponte, é a opção mais abrangente no que se refere a configuração de adaptadores nas VMs. Quando selecionada, o VirtualBox utiliza os drivers de rede do Host e fazem um ‘net filter (filtro de rede)’, interceptando e injetando dados na rede locaL, ou seja, ele usa a interface física do Host (placa de rede) como passagem de dados. O Guest que possui este modo selecionado, aparece para o Host como se fosse uma maquina física conectada na rede.
    Em linhas gerais, esta máquina consegue acessar a internet e também pertence a rede interna do Host, permitindo uma conexão SSH (Secure Shell) ou usar ferramentas como o SCP (Secure Copy).
-   Isso é para necessidades de rede mais avançadas, como simulações de rede e servidores em execução em um Guest.
+   Isso é para necessidades de rede mais avançadas, como simulações de rede e servidores em execução em um Guest.<p>
    
 
 -------------------------------------------------------------------   
