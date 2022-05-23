@@ -60,6 +60,11 @@ Definições que auxiliaram a leitura do documento:
    </p>Para maiores informações:
       </p>https://www.virtualbox.org/manual/ch06.html#network_udp_tunnel
       </p>https://www.virtualbox.org/manual/ch06.html#network_vde<p>
+
+-------------------------------------------------------------------   
+<h4>Tabela de comparativo entre os tipos de rede</h4>
+![image](https://user-images.githubusercontent.com/95552879/169851039-2597e2c2-e059-4ffb-8da3-d34b20ce0b89.png)
+
       
 
 <p>.</p>.</p>.</p><h4>Site para aprofundamento do conteúdo acima disposto:</h4>
