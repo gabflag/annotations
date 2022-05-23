@@ -44,9 +44,25 @@ Conforme o próprio artigo sugere é interessante deixar claro definições bás
    <p>Para maiores informações: https://www.virtualbox.org/manual/ch06.html#network_internal<p>
 
 
+-------------------------------------------------------------------   
+6° Host-Only
 
+   <p>Host-Only: Na tradução literal Somente o Hospedeiro, assim como no Bridged Adapter, as máquinas virtuais podem conversar entre si e com o host como se estivessem conectadas através de um interruptor Ethernet físico. E tambem como na Internal Network, uma interface de rede física não precisa estar presente, e as máquinas virtuais não podem falar com o mundo fora do host, pois não estão conectadas a uma interface de rede física.<p>
+   <p>Para clarificar, enquanto com a rede conectada uma interface física existente (placa de rede) é usada para anexar máquinas virtuais (Bridged), com a rede somente de host (Host-Only) uma nova interface de LOOPBACK é criada no host. E não menos importante, o que diferencia a rede interna (Internal Network) onde o tráfego entre as máquinas virtuais não pode ser visto, o tráfego na interface loopback no host pode ser interceptado.<p>
+   <p>Para maiores informações: https://www.virtualbox.org/manual/ch06.html#network_hostonly<p>
+      
+ 
+-------------------------------------------------------------------   
+7° Generic Driver
 
-
+   <p>Generic Driver: Na tradução literal Drive Genérico, permite que o usuário selecione qual driver de rede será incluído na VM. No momento, existem dois sub-modos disponíveis para o Generic Driver:
+   - UDP Tunnel: Utilizado para conectar VMs que estão rodando em hosts diferentes;
+   - VDE (Virtual Distributed Ethernet) networking: Pode ser utilizado para habilitar conexão com um um switch “Virtual Distributed Ethernet” em um ambiente Linux ou FreeBSD.
+   <p>Para maiores informações:
+      https://www.virtualbox.org/manual/ch06.html#network_udp_tunnel</p>
+      
+      
+ 
 
 
 
