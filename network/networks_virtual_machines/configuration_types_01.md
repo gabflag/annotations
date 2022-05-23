@@ -1,13 +1,12 @@
+<h3>Com o propósito de esclarecer algumas configurações possíveis de VMs no VirtualBox, abaixo estará contido algumas informações básicas para o melhor entendimento dos tipos de redes que podem ser criadas no virtualizador.</h1>
 
-
-
-Conforme o próprio artigo sugere é interessante deixar claro definições básicas para melhor entendimento ao decorrer da explicação, segue:
+Definições que auxiliaram a leitura do documento:
 
    - Guest: Se refere a maquina virtual;
    - Host: Computador onde a VM está rodando;
    - External: Rede externa, ou para ficar ainda mais claro se refere a Internet.
 
-<p>Tendo fixado preliminarmente essas definições paratiremos agora para os tipos de conexão que podemos estabelecer para o Guest, vamos lá!<p>
+<p>Tendo fixado preliminarmente essas definições paratiremos agora para os tipos de conexão que podemos estabelecer para o Guest. Vamos lá!<p>
 
 
 -------------------------------------------------------------------
@@ -63,7 +62,7 @@ Conforme o próprio artigo sugere é interessante deixar claro definições bás
       </p>https://www.virtualbox.org/manual/ch06.html#network_vde
       
 
-<p>Site para aprofundamento do conteúdo acima disposto:
+<p><p><p>Site para aprofundamento do conteúdo acima disposto:
 https://wltech.com.br/tipos-de-conexao-de-rede-no-virtualbox/#page-content
 https://www.virtualbox.org/manual/ch06.html
 https://www.cisco.com/c/pt_br/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html<p>
