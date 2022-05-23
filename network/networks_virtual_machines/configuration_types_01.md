@@ -3,15 +3,15 @@ Site de pesquisa: https://wltech.com.br/tipos-de-conexao-de-rede-no-virtualbox/#
 
 Conforme o próprio artigo sugere é interessante deixar claro definições básicas para melhor entendimento ao decorrer da explicação, segue:
     
-    - Guest: Se refere a maquina virtual;
-    - Host: Computador onde a VM está rodando;
-    - External: Rede externa, ou para ficar ainda mais claro se refere a Internet.
+    * Guest: Se refere a maquina virtual;
+    * Host: Computador onde a VM está rodando;
+    * External: Rede externa, ou para ficar ainda mais claro se refere a Internet.
    
 Tendo fixado preliminarmente essas definições paratiremos agora para os tipos de conexão que podemos estabelecer para o Guest, vamos lá!
 
 1° Not Attached:
 
-    - Not Attached: Na tradução literal Não anexado, podemos entender como não conectado. Como sugere, o Guest não terá qualquer tipo de conexão de rede.
+    * Not Attached: Na tradução literal Não anexado, podemos entender como não conectado. Como sugere, o Guest não terá qualquer tipo de conexão de rede.
  
 2° NAT:
 
