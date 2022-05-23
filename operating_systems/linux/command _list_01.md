@@ -28,6 +28,10 @@
     COMANDO: top
     Depois clicar na letra "o" e escrever "COMANDO=python3" para filtra pela coluna COMANDO.
     
+    Ou
+    
+    Comando: ps |grep nome_tarefa
+    
 7 - Descobrindo se a máquina possui alguma regra de iptables ativa:
  
     COMANDO: iptables -nvL INPUT --line-numbers 
