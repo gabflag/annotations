@@ -62,7 +62,7 @@ Definições que auxiliaram a leitura do documento:
       </p>https://www.virtualbox.org/manual/ch06.html#network_vde<p>
 
 -------------------------------------------------------------------   
-<h4>Tabela de comparativo entre os tipos de rede</h4>
+<h4>Tabela de comparativo entre os modos de rede</h4>
 
 ![Screenshot_1](https://user-images.githubusercontent.com/95552879/169851560-1f298249-c236-4408-8278-6c70d123150f.png)
 
