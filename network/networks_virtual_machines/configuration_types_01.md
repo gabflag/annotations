@@ -11,7 +11,7 @@ Tendo fixado preliminarmente essas definições paratiremos agora para os tipos 
 
 1° Not Attached:
 
-    Not Attached: Na tradução literal Não anexado, podemos entender como não conectado. Como sugere, o Guest não terá qualquer tipo de conexão de rede.
+   Not Attached: Na tradução literal Não anexado, podemos entender como não conectado.Como sugere, o Guest não terá qualquer tipo de conexão de rede.
  
 2° NAT:
 
