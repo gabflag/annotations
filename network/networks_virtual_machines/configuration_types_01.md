@@ -56,17 +56,14 @@ Conforme o próprio artigo sugere é interessante deixar claro definições bás
 7° Generic Driver
 
    <p>Generic Driver: Na tradução literal Drive Genérico, permite que o usuário selecione qual driver de rede será incluído na VM. No momento, existem dois sub-modos disponíveis para o Generic Driver:
-   - UDP Tunnel: Utilizado para conectar VMs que estão rodando em hosts diferentes;
-   - VDE (Virtual Distributed Ethernet) networking: Pode ser utilizado para habilitar conexão com um um switch “Virtual Distributed Ethernet” em um ambiente Linux ou FreeBSD.
-   <p>Para maiores informações:
-      https://www.virtualbox.org/manual/ch06.html#network_udp_tunnel</p>
+   </p>- UDP Tunnel: Utilizado para conectar VMs que estão rodando em hosts diferentes, de forma fácil e transparente, sobre uma infraestrutura de rede existente;
+   </p>- VDE (Virtual Distributed Ethernet) networking: Pode ser utilizado para habilitar conexão com um switch “Virtual Distributed Ethernet” em um ambiente Linux ou FreeBSD.
+   </p>Para maiores informações:
+      </p>https://www.virtualbox.org/manual/ch06.html#network_udp_tunnel
+      </p>https://www.virtualbox.org/manual/ch06.html#network_vde
       
-      
- 
 
-
-
-<p>Site de pesquisa:
+<p>Site para aprofundamento do conteúdo acima disposto:
 https://wltech.com.br/tipos-de-conexao-de-rede-no-virtualbox/#page-content
 https://www.virtualbox.org/manual/ch06.html
 https://www.cisco.com/c/pt_br/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html<p>
