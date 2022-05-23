@@ -63,10 +63,14 @@ Definições que auxiliaram a leitura do documento:
 
 -------------------------------------------------------------------   
 <h4>Tabela de comparativo entre os tipos de rede</h4>
-![image](https://user-images.githubusercontent.com/95552879/169851039-2597e2c2-e059-4ffb-8da3-d34b20ce0b89.png)
 
+![Screenshot_1](https://user-images.githubusercontent.com/95552879/169851560-1f298249-c236-4408-8278-6c70d123150f.png)
+
+<p>Legenda:
+      </p>  '+' significa 'sim, esta direção de iniciação de conexão é possível;
+      </p>  '-' significa 'não', não é possível iniciar conexões na direção indicada no título da coluna;
+      </p>  'Port Foward' significa 'encaminhamento de portas', isso significa que o VM VirtualBox ouve certas portas no host e reencaminha todos os pacotes que chegam lá ao Guest interessado, na mesma ou em uma porta diferente. Essa é uma configuração manual.
       
-
 <p>.</p>.</p>.</p><h4>Site para aprofundamento do conteúdo acima disposto:</h4>
 </p>https://wltech.com.br/tipos-de-conexao-de-rede-no-virtualbox/#page-content
 </p>https://www.virtualbox.org/manual/ch06.html
