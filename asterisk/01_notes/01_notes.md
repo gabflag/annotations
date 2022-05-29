@@ -1,5 +1,7 @@
 O presente artigo tratará de algumas informações básicas de instalação e configuração do asterisk. Ao fim da leitura o indiviudo será capaz de realizar uma chamada telefônica através do computador. Ressalto também que não tenho grandes conhecimentos a respeito do funcionamento/comportamento do asterisk, mas espero que esse conteúdo seja de certa forma proveitoso. 
 
+Os arquivos de configuração estarão dispostos no respectivo diretório.
+
 Instalando 
 
 Para instalar podemos optar por duas maneiras, uma um pouco mais complexa e manual, e a outra, usando a o recurso dos sistemas Linux 'apt-get'. No shell do Linux com a permissão de administrador ativada digitar os seguintes comandos: 
@@ -23,6 +25,10 @@ Preliminarmente, deixemos claro que o pjsip.conf é um arquivo de texto plano co
 
     1° rasterisk ('entrando' no asterisk) 
     2° module reload res_pjsip.conf (Reniciando o módulo)
+    
+Uma forma um pouco mais bruta é diretamente no shell digitar o comando:
+        
+       service asterisk restart
 
 Não menos importante, o arquivo padrão do pjsip vem com muita informação e pré configurações, meu conselho é que você faça uma cópia dele e inicie um arquivo totalmente do zero. Só não precisaremos de fato da primeira informação padrão que é a que define o protocolo de comunicação que estaremos usando. Não se preocupe, logo abaixo vou mostrar como deve ficar.
 
@@ -66,7 +72,6 @@ Delimitando como o dados serão transportados
     
     
     [escritorio]       
-  
     type=endpoint    
     context=trabalho  
     disallow=all      
@@ -75,19 +80,23 @@ Delimitando como o dados serão transportados
     auth=authescritorio         
     
     [escritorio]
-    
     type=aor          
     max_contacts=1    
     
     [authescritorio]
-    
     type=auth           
     auth_type=userpass  
     password=entrei321
     username=escritorio     
 
 
-Joia. Essa são as configurações básicas no para você conseguir fazer sua primeira ligação, na verdade, até duas. Temos duas sessões cadastradas, a 100 e a escritório. A 100 vai usar o contexto 'home' e a escritório vai usar o contexto 'trabalho'. Por hora terminamos com esse arquivo, vamos para o próximo.
+Joia. Essa são as configurações básicas no para você conseguir fazer sua primeira ligação, na verdade, até duas. Temos duas sessões cadastradas, a 100 e a escritório. A 100 vai usar o contexto 'home' e a escritório vai usar o contexto 'trabalho'. Uma dica legal, para conferir se de fato os endpoints (ramais) foram cadastrados digite o seguinte comando no seu shell:
+
+     show pjsip endpoints
+     
+Irá retornar a quantidade e quais são os endpoints. Por hora terminamos com esse arquivo, vamos para o próximo.
+
+EXTENSIONS.CONF
 
 
     
