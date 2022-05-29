@@ -10,7 +10,12 @@ Para instalar podemos optar por duas maneiras, uma um pouco mais complexa e manu
     2° apt-get upgrade 
     3° apt-get install asterisk 
 
-Joia. Asterisk Instalando.
+Joia. Asterisk Instalando. Para verificar se o serviço está rodando digitar o seguinte comando:
+    
+    systemctl list-unit-files --type service -all | grep asterisk
+    Ou
+    service asterisk status
+
 Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos trabalhar sempre via linha de comando. Para um maior entendimento nesse primeiro momneto,  vou clarificar 3 pastas de suma importância para nós: 
 
     1° /etc/asterisk/pjsip.conf : Local de configuração de ramais (Usuários do sistena); 
