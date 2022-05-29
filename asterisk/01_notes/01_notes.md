@@ -65,7 +65,7 @@ Delimitando como o dados serão transportados
     [100]
     
     type=aor          ; Tipo desta sessão AOR (Address of Record - Endereço de Registro).
-    max_contacts=1    ; Em linhas gerais, o aor define onde um ponto final (endpoint) pode ser contatado. Sem uma seção AOR associada, um ponto final não pode ser                           ; contatado. Aqui estou definindo que o endpoint pode ter no máximo 1 usuário a ser contatado.
+    max_contacts=1    ; Em linhas gerais, o aor define onde um ponto final (endpoint) pode ser contatado. Sem uma seção AOR associada, um ponto final não pode ser.                             contatado. Aqui estou definindo que o endpoint pode ter no máximo 1 usuário a ser contatado.
     
     [100]
     
