@@ -20,7 +20,7 @@ Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos traba
 
     1° /etc/asterisk/pjsip.conf : Local de configuração de ramais (Usuários do sistena); 
     2° /etc/asterisk/extensions.conf : Local de configuração de comportamento no recebimento de chamadas (É aqui onde ficam os contextos - veremos mais adiante); 
-    3° /var/log/asterisk/sounds/en : Local padrão do asterisk para buscar/utilizar áudios; 
+    3° /usr/share/asterisk/sounds/en : Local padrão do asterisk para buscar/utilizar áudios; 
 
 Abaixo comento e listo as configurações: 
 
@@ -97,18 +97,51 @@ Delimitando como o dados serão transportados
 
 Joia. Essa são as configurações básicas no para você conseguir fazer sua primeira ligação, na verdade, até duas. Temos duas sessões cadastradas, a 100 e a escritório. A 100 vai usar o contexto 'home' e a escritório vai usar o contexto 'trabalho'. Uma dica legal, para conferir se de fato os endpoints (ramais) foram cadastrados digite o seguinte comando no seu shell:
 
-     show pjsip endpoints
+     pjsip show endpoints
      
 Irá retornar a quantidade e quais são os endpoints. Por hora terminamos com esse arquivo, vamos para o próximo.
 
 EXTENSIONS.CONF
 
+Alguns exemplos de configuracao:
 
+
+Delimitando Range de numeros:
+
+        [range2000]
+        exten => _2xxx, 1, Ringing
+        exten => _2xxx, n, Wait(4)
+        exten => _2xxx, n, Answer()
+        exten => _2xxx, n, Wait(3)
+        exten => _2xxx, n, Playback(welcome)
+        exten => _2xxx, n, Playback(gabrielcode)
+        exten => _2xxx, n, Hangup()Ligacao entre ramais:  
+  
+  
+  
+Tomada de acao diferente a depender do ramal de origem:
+
+
+        exten => _0954, 1,GotoIf($[${CALLERID(num)} = 3000]?C20,0954,teste)
+            same => n,Wait(4)
+            same => n,Answer()
+            same => n,Wait(1)
+            same => n,Playback(hello-world)
+            same => n,Hangup()
+            same => n(teste),Playback(tt-monkeys)
+            same => n,Hangup()
+            
+            
+Observacao: Nesse caso se o número de origem for igual a 3000 que tiver digitado o ramal 0954 ele irá pular para a linha teste,
+            se o ramal for qualquer outro ele poderá escultar hello-world
+            
+
+Chamada entre ramais internos:
+
+        [interna]
+        exten =>_xx,1,NoOp(Ligacao entre ramais)
+            same =>n,Set(Chamada feita por =${CALLERID(num)})
+            same =>n,Dial(PJSIP/${EXTEN},20,Tt) ;Tt permite a conversacao e transferencia
+            same =>n,HangUp(Causa do desligamento =${HANDUPCAUSE}
     
-
-                  
-                  
-                  
-                  
-                  
-           
+Observacao: Apenas para deixar claro, aqui é interessante trabalhar com um arquivo diaplan exclusivo para ele. Para fazer isso basta digitar no arquivo extensions.conf a seguinte linha: #include extensions_interno.conf (Não esqueca de criar esse arquivo dentro da pasta do asterisk)
