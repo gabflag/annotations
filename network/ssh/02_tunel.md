@@ -10,7 +10,7 @@ Isso pode ser feito com encaminhamento de porta local, encaminhamento de porta r
 
 
 - Ele pode ser usado como proxy (Acessar como se estivesse em outro lugar)
-- Acessar um servico remoto que nao tenha criptografia, ao usar o tunel ssh ele trás consigo a criptografia.
+- Acessar um servico remoto que nao tenha criptografia, ao usar o tunel ssh ele trás consigo a criptografia, entao ao utilizar um site que seja http o tunel torna a comunicacao com ele segura.
 
 
 
