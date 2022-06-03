@@ -14,17 +14,13 @@ da transação. Isso inclui formas de criptografia simétrica, criptografia assi
 
 - O protocolo SSH emprega um modelo cliente-servidor para autenticar duas partes e criptografar os dados entre elas.
 
-- O componente do servidor escuta em uma porta designada para conexões, setada automaticamente na porta 22. Ele é responsável por negociar a conexão segura,
-autenticar a parte conectada e gerar o ambiente correto se as credenciais forem aceitas.
+- O componente do servidor escuta em uma porta designada para conexões, setada automaticamente na porta 22. Ele é responsável por negociar a conexão segura, autenticar a parte conectada e gerar o ambiente correto se as credenciais forem aceitas.
 
 - O cliente é responsável por iniciar o handshake (1 Troca de versao - 2 Troca de chaves - 3 Inicialização Diffie-Hellman da Curva Elíptica - 4 Resposta
 Diffie-Hellman da curva elíptica SSH - 5 Novas Chaves) inicial do protocolo de controle de transmissão (TCP) com o servidor, negociar a 
 conexão segura, verificar se a identidade do servidor corresponde às informações gravadas anteriormente e fornecer credenciais para autenticação.
 
-- Uma sessão SSH é estabelecida em dois estágios separados. A primeira é concordar e estabelecer a criptografia para proteger comunicações futuras. A segunda 
-etapa é autenticar o usuário e descobrir se o acesso ao servidor deve ser concedido.
-
-
+- Para ficar claro sessão SSH é estabelecida em dois estágios separado, a primeira é concordar e estabelecer a criptografia para proteger comunicações futuras. A segunda etapa é autenticar o usuário e descobrir se o acesso ao servidor deve ser concedido.
 
 <h4> => Tipos de criptografia utilizadas: </h4>
 
@@ -53,16 +49,11 @@ No Ubuntu 20.04 por exemplo, tanto o cliente quanto o servidor são padronizados
 Isso significa que, se duas máquinas Ubuntu 20.04 estiverem se conectando (sem substituir as cifras padrão por meio das opções de configuração), elas
 sempre usarão a chacha20-poly1305@openssh.com como cifra como padrão para criptografar sua conexão.
 
-
 Para ficar um pouco mais claro na linha de comando, utilize os seguintes comandos para verificar as cifras disponiveis no seu computador para criptorafar
 a conexão.
 
 
-
-
-# # # # #
-
-- Asymmetrical Encryption: A criptografia assimétrica é diferente da criptografia simétrica pelo motivo de, para enviar dados em uma única direção, são necessárias duas chaves associadas. Uma dessas chaves é conhecida como chave privada (private key), enquanto a outra é chamada de chave pública (public key).
+<h5>Asymmetrical Encryption:</h5> A criptografia assimétrica é diferente da criptografia simétrica pelo motivo de, para enviar dados em uma única direção, são necessárias duas chaves associadas. Uma dessas chaves é conhecida como chave privada (private key), enquanto a outra é chamada de chave pública (public key).
 
 A chave pública pode ser compartilhada livremente com qualquer parte. Ela está associada à sua chave pareada (da privada no caso), mas a chave privada não pode ser derivada da chave pública. A relação matemática entre a chave pública e a chave privada permite que a chave pública criptografe mensagens que só podem ser decriptografadas pela chave privada. Essa é uma habilidade unidirecional, o que significa que a chave pública não tem capacidade de descriptografar as mensagens que escreve, nem pode descriptografar nada que a chave privada possa enviar.
 
