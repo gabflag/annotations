@@ -67,25 +67,19 @@ O uso mais discutido da criptografia assimétrica com SSH vem da autenticação 
 
 Depois que a criptografia simétrica é estabelecida para proteger as comunicações entre o servidor e o cliente, o cliente deve se autenticar para ter acesso permitido. O servidor pode usar a chave pública neste arquivo para criptografar uma mensagem de desafio para o cliente. Se o cliente puder provar que conseguiu descriptografar esta mensagem, ele demonstrou que possui a chave privada associada.
 
-<h5>Cryptographic hash:</5h>As funções de hash criptográfico são métodos de criação de uma “assinatura”,  sendo que elas nunca devem ser revertidas e são virtualmente impossíveis de influenciar de forma previsível, e não menos importante, são praticamente únicos.
 
-Usar a mesma função de hash e mensagem deve produzir o mesmo hash. Modificar qualquer parte dos dados deve produzir um hash totalmente diferente. Um usuário não deve ser capaz de produzir a mensagem original a partir de um determinado hash, mas deve ser capaz de dizer se uma determinada mensagem produziu um determinado hash.
+<h5> Cryptographic hash: </h5>Os hashes são usados principalmente para fins de integridade de dados e para verificar a autenticidade da comunicação. O principal uso em SSH é com HMAC, ou códigos de autenticação de mensagem baseados em hash (hash message authentication code). Eles são usados para garantir que o texto da mensagem recebida esteja intacto e não modificado (tipo um checksum da vida).
 
-Passada essa introdução, os hashes são usados ​​principalmente para fins de integridade de dados e para verificar a autenticidade da comunicação. O principal uso em SSH é com HMAC , ou códigos de autenticação de mensagem baseados em hash (hash message authentication code). Eles são usados ​​para garantir que o texto da mensagem recebida esteja intacto e não modificado (tipo um checksum da vida).
-
-Similar ao que acontece na criptografia simétrica, o hash usa a primeira cifra de encriptação suportada pelo servidor será para realizar sua operação.
-
-Cada mensagem enviada após a negociação da criptografia deve conter um MAC para que a outra parte possa verificar a integridade do pacote. O MAC é calculado a partir do segredo compartilhado simétrico, do número de sequência do pacote da mensagem e do conteúdo real da mensagem.
+Cada mensagem enviada após a negociação da criptografia deve conter um HMAC para que a outra parte possa verificar a integridade do pacote. O MAC é calculado a partir do segredo compartilhado simétrico, do número de sequência do pacote da mensagem e do conteúdo real da mensagem.
 
 
+<h3>Conclusão</h3>
 
-O protocolo SSH para encaminhar portas para um servidor com acesso externo para web, chamamos isso de SSH Tunnel.
+Espero que a leitura tenha sido de bom proveito, apenas para clarificar um pouco melhor o funcionamento do SSH. Nos próximos tó
+picos vou abordar como realizar a criacao de senhas assimétricas, confgurar uma shell para executar uma deterinada conexao, tunel ssh e JumpHost com o SSH
 
+Boa parte do material daqui por diante retirei destes sites:
 
-
-
-
-
-
-Boa parte do material daqui por diante retirei deste site: https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process , recommend a leitura.
-
+https://goteleport.com/blog/ssh-handshake-explained/
+https://goteleport.com/blog/comparing-ssh-keys/
+https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
