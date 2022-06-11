@@ -1,4 +1,4 @@
-O presente artigo tratará de algumas informações básicas de instalação e configuração do asterisk. Ao fim da leitura o indiviudo será capaz de realizar uma chamada telefônica através do computador. Ressalto também que não tenho grandes conhecimentos a respeito do funcionamento/comportamento do asterisk, mas espero que esse conteúdo seja de certa forma proveitoso. 
+O presente artigo tratará de algumas informações básicas de instalação e configuração do asterisk. Ao fim da leitura o indiviudo será capaz de realizar uma chamada telefônica entre computadores conectados na mesma rede. Ressalto também que não tenho grandes conhecimentos a respeito do funcionamento/comportamento do asterisk, é o básico, entretanto, espero que esse conteúdo seja de certa forma proveitoso. 
 
 Os arquivos de configuração estarão dispostos no respectivo diretório.
 
@@ -16,7 +16,7 @@ Joia. Asterisk Instalando. Para verificar se o serviço está rodando digitar o 
     Ou
     service asterisk status
 
-Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos trabalhar sempre via linha de comando. Para um maior entendimento nesse primeiro momneto,  vou clarificar 3 pastas de suma importância para nós: 
+Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos trabalhar sempre via linha de comando. Tendo isso em vinda, para um maior entendimento nesse primeiro momneto,  vou clarificar 3 pastas de suma importância para nós: 
 
     1° /etc/asterisk/pjsip.conf : Local de configuração de ramais (Usuários do sistena); 
     2° /etc/asterisk/extensions.conf : Local de configuração de comportamento no recebimento de chamadas (É aqui onde ficam os contextos - veremos mais adiante); 
@@ -26,7 +26,7 @@ Abaixo comento e listo as configurações:
 
 PJSIP.CONF: 
 
-Preliminarmente, deixemos claro que o pjsip.conf é um arquivo de texto plano composto de seções como a maioria dos arquivos de configuração usados com Asterisk. Cada seção define a configuração de um objeto de configuração dentro de res_pjsip ou um módulo associado. Para ficar um pouco mais claro ao visualizar o arquivo entenda como sessão aquilo delimitado por [], exemplo: [404], [rh], entenda isso como ramais/usuário. E quanto ao módulo por hora não se preocupe muito, só entenda que é possível atualizá-lo sem precisar renicar todo o asterisk com o comando: 
+Preliminarmente, deixemos claro que o pjsip.conf é um arquivo de texto plano composto de sessões como a maioria dos arquivos de configuração usados com Asterisk. Mas o que é cada sessão? Cada sessão define a configuração de um objeto de configuração dentro de res_pjsip ou um módulo associado. Para ficar um pouco mais claro ao visualizar o arquivo, entenda que, sessão é aquilo delimitado por [], exemplo: [404], [rh], uma forma um pouco mais leiga seria ramais/usuário. E quanto ao módulo por hora não se preocupe muito, só entenda que é possível atualizá-lo sem precisar reiniciar todo o asterisk com o comando: 
 
     1° rasterisk ('entrando' no asterisk) 
     2° module reload res_pjsip.conf (Reniciando o módulo)
@@ -35,10 +35,7 @@ Uma forma um pouco mais bruta é diretamente no shell digitar o comando:
         
        service asterisk restart
 
-Não menos importante, o arquivo padrão do pjsip vem com muita informação e pré configurações, meu conselho é que você faça uma cópia dele e inicie um arquivo totalmente do zero. Só não precisaremos de fato da primeira informação padrão que é a que define o protocolo de comunicação que estaremos usando. Não se preocupe, logo abaixo vou mostrar como deve ficar.
-
-Documentação oficial: https://wiki.asterisk.org/wiki/display/AST/PJSIP+Configuration+Sections+and+Relationships 
-
+Não menos importante, o arquivo padrão do pjsip vem com muita informação e pré configurações, meu conselho é que você faça uma cópia dele como backup (caso precise conferir alguma configuração) e crie um arquivo totalmente do zero como o nome pjsip.conf. Do arquivo original precisaremos de fato apenas da primeira informação padrão que é a que define o protocolo de comunicação que estaremos usando. Não se preocupe, logo abaixo vou mostrar como deve ficar.
 
 Configurações no pjsip.conf: 
 
@@ -60,7 +57,7 @@ Delimitando como o dados serão transportados
     disallow=all      ; Método de compressão do áudio
     allow=ulaw        ; Método de compressão do áudio
     aors=100          ; Indicando a sessão com o número máximo de usuário para o ramal 100
-    auth=auth100     ; Indicando a sessão com que define senha de acesso
+    auth=auth100      ; Indicando a sessão com que define senha de acesso
     
     [100]
     
@@ -95,18 +92,21 @@ Delimitando como o dados serão transportados
     username=escritorio     
 
 
-Joia. Essa são as configurações básicas no para você conseguir fazer sua primeira ligação, na verdade, até duas. Temos duas sessões cadastradas, a 100 e a escritório. A 100 vai usar o contexto 'home' e a escritório vai usar o contexto 'trabalho'. Uma dica legal, para conferir se de fato os endpoints (ramais) foram cadastrados digite o seguinte comando no seu shell:
+Jóia. Essa são as configurações básicas de duas sessões, 100 e escritorio. A 100 vai usar o contexto 'home' e a escritório vai usar o contexto 'trabalho'. Não comentei a respeito do contexto ainda, mas entenda como contexto uma ação que vai ser executada, e que, contextos são feitos no arquivo extensions.conf. Por fim, uma dica legal para conferir se de fato os endpoints (ramais) foram cadastrados digite o seguinte comando no seu shell:
 
      pjsip show endpoints
      
 Irá retornar a quantidade e quais são os endpoints. Por hora terminamos com esse arquivo, vamos para o próximo.
 
+Documentação oficial: https://wiki.asterisk.org/wiki/display/AST/PJSIP+Configuration+Sections+and+Relationships 
+
 EXTENSIONS.CONF
+
+Maravilha, no arquivo extensions.conf é onde boa parte da mágica acontece. Neste arquivo consiguiremos realizar as ações que nosso servidor asterisk deve se comporta. Por exemplo, se o ramal 100 discar o número 555 quero reencaminhe a chamada para o ramal do escritório, o contexto ficaria assim: exten =>555,1,Dial(PJSIP/escritorio,20,Tt)
 
 Alguns exemplos de configuracao:
 
-
-Delimitando Range de numeros:
+Delimitando Range de numeros (de 2000 até 2999) - toca, espera 4s atende, espera 3s, fala bem-vindo, toca uma musica, desliga:
 
         [range2000]
         exten => _2xxx, 1, Ringing
@@ -115,14 +115,13 @@ Delimitando Range de numeros:
         exten => _2xxx, n, Wait(3)
         exten => _2xxx, n, Playback(welcome)
         exten => _2xxx, n, Playback(gabrielcode)
-        exten => _2xxx, n, Hangup()Ligacao entre ramais:  
+        exten => _2xxx, n, Hangup()
   
   
   
-Tomada de acao diferente a depender do ramal de origem:
+Tomada de acao diferente a depender do ramal de origem. Nesse caso se o ramal de origem for igual igual ao 'escritorio' e ele tiver digitado o número 0954 irá pular para a linha teste, se o ramal for qualquer outro ele poderá escultar hello-world e a ligação encerra.
 
-
-        exten => _0954, 1,GotoIf($[${CALLERID(num)} = 3000]?C20,0954,teste)
+        exten => _0954, 1,GotoIf($[${CALLERID(num)} = 3000]?escritorio,0954,teste)
             same => n,Wait(4)
             same => n,Answer()
             same => n,Wait(1)
@@ -130,13 +129,8 @@ Tomada de acao diferente a depender do ramal de origem:
             same => n,Hangup()
             same => n(teste),Playback(tt-monkeys)
             same => n,Hangup()
-            
-            
-Observacao: Nesse caso se o número de origem for igual a 3000 que tiver digitado o ramal 0954 ele irá pular para a linha teste,
-            se o ramal for qualquer outro ele poderá escultar hello-world
-            
-
-Chamada entre ramais internos:
+                       
+Chamada entre ramais internos. Se o usuário digitar qualquer número entre 00 e 99 ele será reencaminhado para o ramal digitado nesse range:
 
         [interna]
         exten =>_xx,1,NoOp(Ligacao entre ramais)
@@ -144,4 +138,10 @@ Chamada entre ramais internos:
             same =>n,Dial(PJSIP/${EXTEN},20,Tt) ;Tt permite a conversacao e transferencia
             same =>n,HangUp(Causa do desligamento =${HANDUPCAUSE}
     
-Observacao: Apenas para deixar claro, aqui é interessante trabalhar com um arquivo diaplan exclusivo para ele. Para fazer isso basta digitar no arquivo extensions.conf a seguinte linha: #include extensions_interno.conf (Não esqueca de criar esse arquivo dentro da pasta do asterisk)
+Observação importante: Apenas para deixar claro, aqui é interessante trabalhar com um arquivo diaplan exclusivo para ele. Para fazer isso basta digitar no arquivo extensions.conf a seguinte linha: #include extensions_interno.conf (Não esqueça de criar esse arquivo dentro da pasta do asterisk).
+
+sounds/en
+
+Não menos importante o arquivo en que está no diretório sounds. É nesse arquivo que terá todos os áudios e poderá adicionar novos audios para utilizar nos seus contextos. Não irie citar os tipos suportados por motivos de atualização, entretanto, se você quiser conferir com mais detalhes basta vizualizar os suportados exiistentes.
+
+Dica: Um bom site para fazer a conversão de tipos de áudio é o https://convertio.co/pt/.
