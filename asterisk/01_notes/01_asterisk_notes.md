@@ -1,6 +1,6 @@
 O presente artigo tratará de algumas informações básicas de instalação e configuração do asterisk. Ao fim da leitura o indiviudo será capaz de realizar uma chamada telefônica entre computadores conectados na mesma rede. Ressalto também que não tenho grandes conhecimentos a respeito do funcionamento/comportamento do asterisk, é o básico, entretanto, espero que esse conteúdo seja de certa forma proveitoso. 
 
-Os arquivos de configuração estarão dispostos no respectivo diretório.
+Os arquivos de configuração para realizar ligação entre ramais estarão dispostos no respectivo diretório.
 
 <h3>Instalando</h3>
 
