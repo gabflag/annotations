@@ -2,7 +2,7 @@ O presente artigo tratará de algumas informações básicas de instalação e c
 
 Os arquivos de configuração estarão dispostos no respectivo diretório.
 
-Instalando 
+<h3>Instalando</h3>
 
 Para instalar podemos optar por duas maneiras, uma um pouco mais complexa e manual, e a outra, usando a o recurso dos sistemas Linux 'apt-get'. No shell do Linux com a permissão de administrador ativada digitar os seguintes comandos: 
 
@@ -16,6 +16,9 @@ Joia. Asterisk Instalando. Para verificar se o serviço está rodando digitar o 
     Ou
     service asterisk status
 
+
+<h3>Diretórios Importantes</h3>
+
 Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos trabalhar sempre via linha de comando. Tendo isso em vinda, para um maior entendimento nesse primeiro momneto,  vou clarificar 3 pastas de suma importância para nós: 
 
     1° /etc/asterisk/pjsip.conf : Local de configuração de ramais (Usuários do sistena); 
@@ -24,7 +27,7 @@ Antes de começarmos a configurar o Asterisk, vale-se reforçar que iremos traba
 
 Abaixo comento e listo as configurações: 
 
-PJSIP.CONF: 
+<h4>PJSIP.CONF:</h4> 
 
 Preliminarmente, deixemos claro que o pjsip.conf é um arquivo de texto plano composto de sessões como a maioria dos arquivos de configuração usados com Asterisk. Mas o que é cada sessão? Cada sessão define a configuração de um objeto de configuração dentro de res_pjsip ou um módulo associado. Para ficar um pouco mais claro ao visualizar o arquivo, entenda que, sessão é aquilo delimitado por [], exemplo: [404], [rh], uma forma um pouco mais leiga seria ramais/usuário. E quanto ao módulo por hora não se preocupe muito, só entenda que é possível atualizá-lo sem precisar reiniciar todo o asterisk com o comando: 
 
@@ -100,28 +103,28 @@ Irá retornar a quantidade e quais são os endpoints. Por hora terminamos com es
 
 Documentação oficial: https://wiki.asterisk.org/wiki/display/AST/PJSIP+Configuration+Sections+and+Relationships 
 
-EXTENSIONS.CONF
+<h4>EXTENSIONS.CONF:</h4>
 
-Maravilha, no arquivo extensions.conf é onde boa parte da mágica acontece. Neste arquivo consiguiremos realizar as ações que nosso servidor asterisk deve se comporta. Por exemplo, se o ramal 100 discar o número 555 quero reencaminhe a chamada para o ramal do escritório, o contexto ficaria assim: exten =>555,1,Dial(PJSIP/escritorio,20,Tt)
+Maravilha, no arquivo extensions.conf é onde boa parte da "mágica" acontece. Neste arquivo consiguiremos realizar as ações que nosso servidor asterisk deve se comporta. Por exemplo, se o ramal 100 discar o número 555 quero reencaminhe a chamada para o ramal do 200 contexto ficaria assim: exten =>555,1,Dial(PJSIP/200,20,Tt)
 
 Alguns exemplos de configuracao:
 
 Delimitando Range de numeros (de 2000 até 2999) - toca, espera 4s atende, espera 3s, fala bem-vindo, toca uma musica, desliga:
 
-        [range2000]
+        [exemplo_01]
         exten => _2xxx, 1, Ringing
         exten => _2xxx, n, Wait(4)
         exten => _2xxx, n, Answer()
         exten => _2xxx, n, Wait(3)
         exten => _2xxx, n, Playback(welcome)
-        exten => _2xxx, n, Playback(gabrielcode)
+        exten => _2xxx, n, Playback(musica_adicionada_ao_en)
         exten => _2xxx, n, Hangup()
   
   
-  
-Tomada de acao diferente a depender do ramal de origem. Nesse caso se o ramal de origem for igual igual ao 'escritorio' e ele tiver digitado o número 0954 irá pular para a linha teste, se o ramal for qualquer outro ele poderá escultar hello-world e a ligação encerra.
-
-        exten => _0954, 1,GotoIf($[${CALLERID(num)} = 3000]?escritorio,0954,teste)
+Tomada de acao diferente a depender do ramal de origem. Nesse caso se o ramal de origem for igual igual ao '200' e ele tiver digitado o número 0954 irá pular para a linha teste, se o ramal for qualquer outro ele poderá escultar hello-world e a ligação encerra.
+    
+        [exemplo_02]
+        exten => _0954, 1,GotoIf($[${CALLERID(num)} = 3000]?200,0954,teste)
             same => n,Wait(4)
             same => n,Answer()
             same => n,Wait(1)
@@ -130,18 +133,19 @@ Tomada de acao diferente a depender do ramal de origem. Nesse caso se o ramal de
             same => n(teste),Playback(tt-monkeys)
             same => n,Hangup()
                        
-Chamada entre ramais internos. Se o usuário digitar qualquer número entre 00 e 99 ele será reencaminhado para o ramal digitado nesse range:
+Chamada entre ramais internos. Se o usuário digitar qualquer número entre 00 e 99 ele será reencaminhado para o ramal digitado nesse range
 
-        [interna]
+        [exemplo_03]
         exten =>_xx,1,NoOp(Ligacao entre ramais)
             same =>n,Set(Chamada feita por =${CALLERID(num)})
             same =>n,Dial(PJSIP/${EXTEN},20,Tt) ;Tt permite a conversacao e transferencia
             same =>n,HangUp(Causa do desligamento =${HANDUPCAUSE}
     
-Observação importante: Apenas para deixar claro, aqui é interessante trabalhar com um arquivo diaplan exclusivo para ele. Para fazer isso basta digitar no arquivo extensions.conf a seguinte linha: #include extensions_interno.conf (Não esqueça de criar esse arquivo dentro da pasta do asterisk).
+Observação importante: Apenas para deixar claro, aqui é interessante trabalhar com um arquivo diaplan exclusivo para ele. Para fazer isso basta digitar no arquivo extensions.conf a seguinte linha: #include extensions_interno.conf (Não esqueça de criar esse arquivo dentro da pasta do asterisk).É uma forma de delimitar melhor seus contextos ao invés de trabalhar unicamente no arquivo principal.
 
-sounds/en
+<h4>Sounds/en</h4>
 
-Não menos importante o arquivo en que está no diretório sounds. É nesse arquivo que terá todos os áudios e poderá adicionar novos audios para utilizar nos seus contextos. Não irie citar os tipos suportados por motivos de atualização, entretanto, se você quiser conferir com mais detalhes basta vizualizar os suportados exiistentes.
+Não menos importante o arquivo en que está no diretório sounds. É nesse arquivo que terá todos os áudios que poderá ser utilizado ou adicionar novos audios para utilizar nos seus contextos. Não irie citar os tipos suportados por motivos de atualização, entretanto, se você quiser conferir com mais detalhes basta vizualizar os suportados exiistentes ou conferir na documentação mais atual.
+
 
 Dica: Um bom site para fazer a conversão de tipos de áudio é o https://convertio.co/pt/.
