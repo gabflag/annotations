@@ -1,7 +1,7 @@
 A discursão desse tópico será a modulação e os blocos de construção da rádio. Como é que a sua voz é convertida em ondas que podem ser transmitidas e recebidas por aparelhos de rádio?
 
   - Introdução ao espaçamento entre canais
-  - Como funciona um Transceptor FM?
+  - Como funciona um Trasmissor FM?
   - A diferença entre FDMA e TDMA
   - A correlação entre alcance e potência
 
@@ -22,3 +22,5 @@ O espectro de rádio é muito limitado. Todo usuário de espectro de rádio prec
 - E uma banda ultra estreita (Ultra narrowband) tem metade do tamanho novamente, 6,25 kilohertz, e é o menor “tubo” de todos. (Pequeno espaçamento no bloco do espectro de rádio)
 
 ![bands](https://user-images.githubusercontent.com/95552879/179833171-2627ea61-3051-4764-a1cf-7b040e0f7108.png)
+
+
