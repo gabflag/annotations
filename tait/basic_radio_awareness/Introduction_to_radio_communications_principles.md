@@ -4,7 +4,7 @@ Neste primeiro capítulo, exploramos esses princípios e as diferentes maneiras 
 
 Está separado nos seguintes modulos:
 
-  O que é comunicação?
-  O que é uma onda de rádio?
-  O que é propagação?
-  Como funcionam os repetidores?
+  - O que é comunicação?
+  - O que é uma onda de rádio?
+  - O que é propagação?
+  - Como funcionam os repetidores?
