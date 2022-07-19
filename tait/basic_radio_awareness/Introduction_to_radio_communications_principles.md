@@ -79,6 +79,11 @@ O rádio que está na banda VHF viaja em linha reta. Em outras palavras, os raio
 - UHF é a sigla para o termo inglês Ultra High Frequency (Freqüência Ultra Alta), e designa a faixa de radiofrequências de 300 MHz até 3 GHz. É ela a responsável pelos sinais de televisão atuais (canais 14 ao 83), rádio e transceptores. É uma frequência indicada para grandes centros urbanos, pois possui capacidade de reflexão e penetração em obstáculos feitos pelo homem, como aço e concreto dos prédios, pontes, etc.
 
 
+Entendendo um pouco a respeito do VHF e UHF, abaixo uma tabela demosntrando as aplicações e exemplos:
+
+![Screen Shot 2022-07-19 at 15 15 53](https://user-images.githubusercontent.com/95552879/179820967-534087c1-147d-4596-9283-dcf9514527b0.png)
+
+
 
 Por exemplo, em ondas curtas mais baixas, que são cerca de 300 kHz a 3 MHz, a propagação de rádio ou onda de rádio pode realmente se curvar em torno do horizonte ou da curvatura da Terra.
 
