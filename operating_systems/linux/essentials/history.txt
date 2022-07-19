@@ -1,0 +1,8 @@
+
+
+O objetivo da certificação linux essentials é atestar que o índividuo:
+
+ - Tem entendimento da indústria Linux e de código aberto e conhecimento dos aplicativos de código aberto mais populares;
+ - Entender os principais componentes do sistema operacional Linux e ter a proficiência técnica para trabalhar na linha de comando Linux;
+ - Tem compreensão básica de tópicos relacionados à segurança e administração, como gerenciamento de usuários/grupo, trabalho na linha de 
+   comando e permissões.
