@@ -1,12 +1,4 @@
-A discursão desse tópico será a modulação e os blocos de construção da rádio. Como é que a sua voz é convertida em ondas que podem ser transmitidas e recebidas por aparelhos de rádio?
-
-  - Introdução ao espaçamento entre canais
-  - Como funciona um Trasmissor FM?
-  - A diferença entre FDMA e TDMA
-  - A correlação entre alcance e potência
-
-
-Introdução ao espaçamento entre canais
+#Introdução ao espaçamento entre canais
 
 Quanto maior o espaçamento entre canais, melhor a repecção/qualidade do áudio e menor quantidade de usuários.
 Quanto menor o espaçamento entre canais, maior quantidade de usuários e menor a recepção/qualidade do áudio.
