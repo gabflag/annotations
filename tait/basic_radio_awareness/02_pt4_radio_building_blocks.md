@@ -1,4 +1,4 @@
-# A diferença entre FDMA e TDMA
+# A diferença entre FDMA, TDMA E CDMA
 
 Um canal de RF (Radio Frequencia) ocupa uma certa quantidade de espectro de rádio. Qual é o uso mais eficiente desse pequeno pedaço de espectro de rádio que compõe nosso canal?
 
