@@ -96,17 +96,12 @@ Em ondas curtas mais altas, que é o que as pessoas nos anos 40 e 50 costumavam 
 
 
 
+- Como funcionam os repetidores?
 
+A conexão de rádio para rádio e é chamada de comunicação simplex. Entretanto, está pode ser prejudicada por questões geograficas (montanha, por exemplo) e de comprimeto de onda, neste caso, torna-se interessante os repetidores de sinal.
 
+Se um usuário quiser fazer uma chamada no rádio portátil, a mensagem vai em linha reta até a repetidora, que usualmente fica no alto de uma montanha, o repetidor precisa receber a frequência com que o chamador transmitiu e, em seguida, o repetidor retransmite essa mesma mensagem para o usuário do outro lado da montanha. Funciona de forma semelhante ao satélite discutido com a propagação de rádio VHF, mas em vez de um satélite, é um rádio fixo no topo da colina.
 
-
-
-
-
-
-
-
-
-
+![Screen Shot 2022-07-19 at 15 30 42](https://user-images.githubusercontent.com/95552879/179823400-12961a4f-8a93-48bc-a4e4-3a17c2cf712d.png)
 
 
