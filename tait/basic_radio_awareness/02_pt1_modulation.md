@@ -1,9 +1,4 @@
-A discursão desse tópico será a modulação e os blocos de construção da rádio. Como é que a sua voz é convertida em ondas que podem ser transmitidas e recebidas por aparelhos de rádio?
-
-  - Como funciona a modulação?
-
-
-Como funciona a modulação?
+# Como funciona a modulação?
 
 A frequência de um canal de RF (Radio Frequencia) é melhor compreendida como a frequência de uma onda transportadora (Carrier). Uma onda transportadora é uma onda pura de frequência constante, semelhante a uma onda senoidal. Por si só, não carrega muitas informações com as quais podemos nos relacionar (como fala ou dados).
 
