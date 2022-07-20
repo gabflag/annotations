@@ -1,0 +1,1 @@
+As distribuições utilizam do kernel já existente (desemvolvido pela Linux) e, sobre esse kernel, é implementado as funcionalidades
