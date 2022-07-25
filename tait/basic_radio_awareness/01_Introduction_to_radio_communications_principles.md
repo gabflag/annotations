@@ -1,6 +1,6 @@
+Título <h1>
 
-
-Neste primeiro capítulo, exploramos esses princípios e as diferentes maneiras pelas quais as pessoas se comunicam. Também analisamos as ondas de rádio e aprendemos como a tecnologia de rádio é capaz de fazer sua voz ser ouvida a muitos quilômetros de distância.
+Neste primeiro capítulo, exploramos os princípios abaixo e as diferentes maneiras pelas quais as pessoas se comunicam. Também analisamos as ondas de rádio e aprendemos como a tecnologia de rádio é capaz de fazer sua voz ser ouvida a muitos quilômetros de distância.
 
 Está separado nos seguintes modulos:
 
@@ -8,8 +8,6 @@ Está separado nos seguintes modulos:
   - O que é uma onda de rádio?
   - O que é propagação?
   - Como funcionam os repetidores?
-
-
 
 O que é comunicação?
   
