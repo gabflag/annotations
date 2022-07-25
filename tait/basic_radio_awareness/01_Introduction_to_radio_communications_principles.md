@@ -1,15 +1,15 @@
-Título <h1>
+<h1> Basic Radio Awareness </h1>
 
 Neste primeiro capítulo, exploramos os princípios abaixo e as diferentes maneiras pelas quais as pessoas se comunicam. Também analisamos as ondas de rádio e aprendemos como a tecnologia de rádio é capaz de fazer sua voz ser ouvida a muitos quilômetros de distância.
 
 Está separado nos seguintes modulos:
 
-  - O que é comunicação?
-  - O que é uma onda de rádio?
-  - O que é propagação?
-  - Como funcionam os repetidores?
+  1. **O que é comunicação?**
+  2. **O que é uma onda de rádio?**
+  3. **O que é propagação?**
+  4. **Como funcionam os repetidores?**
 
-O que é comunicação?
+<h3>O que é comunicação?</h3>
   
 A comunicação começa quando alguém quer transmitir informações a outra pessoa. Essa informação deve ser apresentada como algum tipo de padrão. Por exemplo, a fala é um padrão, os sinais de fumaça são um padrão, os tambores falantes são um padrão, as chamadas telefônicas são um padrão, o código Morse é um padrão.
 Esses padrões então viajam por um canal de comunicação, geralmente envolvendo um meio. Por exemplo, fumaça passando pelo ar, sinais elétricos passando por fios ou fala passando pela atmosfera como uma série de ondas de pressão.
@@ -21,7 +21,7 @@ Por fim, é recebido de uma forma em que o destinatário pode realmente entender
 É assim que funciona a comunicação por rádio. Alguém fala em um rádio, ele é codificado ou transformado em um padrão pelo transmissor. Em seguida, ele é enviado como ondas eletromagnéticas através de um canal de comunicação (a atmosfera), que é recebido pelo um rádio. Ele é decodificado para que o padrão seja entendido e convertido novamente em som que o receptor entenda e pode agir.
 
 
-- O que é uma onda de rádio?
+<h3>O que é uma onda de rádio?</h3>
 
 Conforme mencionado no modelo básico de comunicação, para transmitir informações a alguém:
 
@@ -60,7 +60,7 @@ Ps: Na parte de espectro de rádio os humanos são provavelmente os únicos usu�
 Do uso humano do espectro de rádio, os maiores usuários são os militares. Eles usam o rádio de comprimento de onda mais longo para permitir que os submarinos se comuniquem entre si, e também usam as partes mais altas do espectro porque podem penetrar em edifícios e se comunicar com pessoas dentro.
 
 
- - O que é propagação?
+<h3>O que é propagação?</h3>
 
 É útil quando se pensa em ondas de rádio pensar em ondas de luz.
 
@@ -93,13 +93,10 @@ Em ondas curtas mais altas, que é o que as pessoas nos anos 40 e 50 costumavam 
 ![Image-42-800x450](https://user-images.githubusercontent.com/95552879/179819886-d45452d7-ee49-470b-aeb0-89ba30219623.png)
 
 
-
-- Como funcionam os repetidores?
+<h3>Como funcionam os repetidores?</h3>
 
 A conexão de rádio para rádio e é chamada de comunicação simplex. Entretanto, está pode ser prejudicada por questões geograficas (montanha, por exemplo) e de comprimeto de onda, neste caso, torna-se interessante os repetidores de sinal.
 
 Se um usuário quiser fazer uma chamada no rádio portátil, a mensagem vai em linha reta até a repetidora, que usualmente fica no alto de uma montanha, o repetidor precisa receber a frequência com que o chamador transmitiu e, em seguida, o repetidor retransmite essa mesma mensagem para o usuário do outro lado da montanha. Funciona de forma semelhante ao satélite discutido com a propagação de rádio VHF, mas em vez de um satélite, é um rádio fixo no topo da colina.
 
 ![Screen Shot 2022-07-19 at 15 30 42](https://user-images.githubusercontent.com/95552879/179823400-12961a4f-8a93-48bc-a4e4-3a17c2cf712d.png)
-
-
