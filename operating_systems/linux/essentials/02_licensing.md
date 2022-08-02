@@ -74,7 +74,7 @@ Exemplos:
 <h3>Shareware Software:</h3>
     Software onde é possível utilizar apenas algumas funcionalidades ou é possível realizar um periodo de teste. Caso queira a experiência total é necessário pagar.
 
-</3>Freeware Software:</h3>
+<h3>Freeware Software:</h3>
     Software gratuito. Não necessáriamente é FLOSS.
 
 
