@@ -11,7 +11,13 @@ Do que é formado uma distribuição:
 
 Principais distribuições (por ordem cronológica):
 
-Debian - A que mais foca na comunidade e estáveis que existe. Usado tambem em servidores por conta da estabilidade. Versão cliente e servidor;
+Debian - A que mais foca na comunidade e estáveis que existe. Usado tambem em servidores por conta da estabilidade. Versão cliente e servidor.
+
+O Debian GNU/Linux é a maior distribuição da família Debian. O Projeto Debian GNU/Linux foi lançado por Ian Murdock em 1993 e conta, hoje, com milhares de voluntários trabalhando no projeto. O objetivo do Debian GNU/Linux é fornecer um sistema operacional extremamente confiável. Ele também promove a visão de Richard Stallman de um sistema operacional que respeite as liberdades do usuário de executar, estudar, distribuir e aprimorar o software. Por essa razão, ele também não fornece nenhum programa proprietário por padrão.
+<p>
+<p>
+<p>
+
 
 Ubuntu - Posterior ao debian, o ubuntu utilizou do debian para ser criada, por isso o gerenciamento de pacote no ubuntu temos o .deb.
 
