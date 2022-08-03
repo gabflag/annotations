@@ -129,4 +129,12 @@ Muitas distribuições independentes foram lançadas ao longo dos anos. Algumas 
 
 &nbsp;
 
+&nbsp;
+
+
+<h3>Sistemas embarcados</h3>
+&nbsp;
+
+Em sistemas embarcados temos software embarcado, cujo objetivo é acessar o hardware e torná-lo utilizável. Dentre as principais vantagens do Linux sobre qualquer software embarcado proprietário estão a compatibilidade entre plataformas de diferentes fornecedores, desenvolvimento, suporte e ausência de taxas de licença. Dois dos mais populares projetos de software embarcado são o **Android**, usado principalmente em telefones celulares por diferentes fabricantes, e o **Raspbian**, que é usado principalmente no Raspberry Pi.
+
 Algo estavel tem o termo= LTS Long Term Suport.
